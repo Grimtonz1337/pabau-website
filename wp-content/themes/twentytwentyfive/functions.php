@@ -156,3 +156,15 @@ if ( ! function_exists( 'twentytwentyfive_format_binding' ) ) :
 		}
 	}
 endif;
+
+function add_jquery() {
+    if (!wp_script_is('jquery', 'enqueued')) {
+        wp_enqueue_script('jquery');
+    }
+}
+add_action('wp_enqueue_scripts', 'add_jquery');
+
+function add_custom_style() {
+    wp_enqueue_style('custom-style', get_stylesheet_directory_uri() . '/assets/css/custom.css');
+}
+add_action('wp_enqueue_scripts', 'add_custom_style');
