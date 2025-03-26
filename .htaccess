@@ -13,4 +13,8 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /pabau/index.php [L]
 </IfModule>
 
+<Files "*.ini">
+Require all denied
+</Files>
+
 # END WordPress
